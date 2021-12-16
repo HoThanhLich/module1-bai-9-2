@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    <!--    Bài 1: chuyển từ độ C sang độ F-->
+
+    // let doC = prompt("moi nhap nhiet do C: ");
+    // doC = parseFloat(doC)
+    // console.log(typeof doC)
+    // let doF = ((doC * 9) / 5) + 32;
+    // alert("nhiet do F tuong duong la:  " + doF);
+
+    // bài 2: Chuyển từ met sang feet:
+    //
+    // let soMet = prompt("moi nhap nhiet so m: ");
+    // soMet = parseFloat(soMet);
+    // alert("số feet tương ứng là:  " + (soMet*3.2808));
+    //
+    // bài 3: tính diện tích hình vuông khi biết cạnh a.
+    //
+    // let canh = parseFloat(prompt("mời nhập độ dài cạnh hình vuông: "));
+    // alert(" Diện tích hình vuông là: " + canh*canh);
+    //
+    //
+    // bài 4: tính diện tích hình chữ nhật.
+    // let chieuRong = parseFloat(prompt("moi nhap do dai chieu rong: "));
+    // let chieuDai = parseFloat(prompt("moi nhap do dai chieu dai: "));
+    // alert("Diện tích của hình chữ Nhật là: " + chieuRong*chieuDai)  ;
+    //
+    //
+    // bài 5: tính diện tích tam giác vuông:
+    // let canh1 = parseFloat(prompt("mời nhập cạnh vuông thứ Nhất: "));
+    // let canh2 = parseFloat(prompt("mời nhập cạnh vuông thứ Hai: "));
+    //   alert(" Diện tích hình vuông là: " + (canh1*canh2)/2);
+    //
+    // Bài 6: Giải phương trình bậc 1.
+    // let a = parseFloat(prompt("mời nhập a: "));
+    // let b = parseFloat(prompt("mời nhập b: "));
+    // if (a == 0) {
+    //     if (b == 0) {
+    //         alert("phương trình vô số nghiệm");
+    //     } else alert("phương trình vô nghiệm");
+    // } else alert("phương trình có nghiệm là x = " +(- b / a));
+
+
+    // Bài 7: Giải phương trình bậc 2.
+    // let a = parseFloat(prompt("mời nhập a: "));
+    // let b = parseFloat(prompt("mời nhập b: "));
+    // let c = parseFloat(prompt("mời nhập c: "));
+    // let delta, x, y;
+    // if (a == 0) {
+    //     if (b == 0) {
+    //         if (c == 0) {
+    //             alert("phương trình vô số nghiệm");
+    //         } else alert("phương trình vô nghiệm");
+    //     } else alert("phương trình có nghiệm là x = " + (-c / b));
+    // } else {
+    //     delta = (b * b) - 4 * a * c;
+    //     if (delta < 0) {
+    //         alert("phương trình vô nghiệm");
+    //     } else if (delta > 0) {
+    //         x = (-b - Math.sqrt(delta)) / (2 * a);
+    //         y = (-b + Math.sqrt(delta)) / (2 * a);
+    //         alert("phương trình có 2 nghiệm phân biệt là:\n x1 = " + x + "\n x2 = " + y)
+    //     }
+    //     x = -b/(2 * a);
+    //     alert("phương trình có nghiệm kép là: " + x);
+    // }
+
+
+    // Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không.
+    //     Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+
+    // let tuoi = prompt("mời nhập tuổi: ");
+    // (tuoi%1==0 && tuoi>0 &&tuoi<120 ) ? alert(tuoi + " đúng đúng là tuổi phù hơp") : alert("đây không phải là tuổi")
+
+
+    // bài 9: kiểm tra dk cạnh của tam giác
+    // let canhA = parseFloat(prompt("mời nhập cạnh a: "));
+    // let canhB = parseFloat(prompt("mời nhập cạnh b: "));
+    // let canhC = parseFloat(prompt("mời nhập cạnh c: "));
+    // if (canhA > 0 && canhB > 0 && canhC > 0) {
+    //     if (canhA + canhB > canhC && canhA + canhC > canhB && canhB + canhC > canhA) {
+    //         alert("Đây đúng là cạnh của một tam giác ");
+    //     } else alert(" đây không phải là một tam giác !");
+    // }else  alert(" đây không phải là một tam giác !");
+
+
+    // bài 10: tính giá điện
+
+    // {
+    // Bậc 1: Cho kWh từ 0 – 50	        -> đơn giá: 1.678
+    // Bậc 2: Cho kWh từ 51 – 100   	-> đơn giá: 1.734
+    // Bậc 3: Cho kWh từ 101 – 200  	-> đơn giá: 2.014
+    // Bậc 4: Cho kWh từ 201 – 300	    -> đơn giá: 2.536
+    // Bậc 5: Cho kWh từ 301 – 400	    -> đơn giá: 2.834
+    // Bậc 6: Cho kWh từ 401 trở lên    -> đơn giá:	2.927
+    //    }
+
+    let tieuThu = parseFloat(prompt("mời nhập số điện tiêu thụ(kW.h): "));
+    let chiPhi;
+    let muc1 = 50 * 1678;
+    let muc2 = muc1 + 50 * 1734;
+    let muc3 = muc2 + 100 * 2014;
+    let muc4 = muc3 + 100 * 2536;
+    let muc5 = muc4 + 100 * 2834;
+
+
+    if (tieuThu <= 50) {
+        chiPhi = tieuThu * 1678;
+    } else if (tieuThu <= 100) {
+        chiPhi = muc1 + 1734 * (tieuThu - 50);
+    } else if (tieuThu <= 200) {
+        chiPhi = muc2 + 2014 * (tieuThu - 100);
+    } else if (tieuThu <= 300) {
+        chiPhi = muc3 + 2536 * (tieuThu - 100);
+    } else if (tieuThu <= 400) {
+        chiPhi = muc4 + 2834 * (tieuThu - 100);
+    } else {
+        chiPhi = muc5 + 2927 * (tieuThu - 400);
+    }
+    alert("So tien phai thanh toan la: " + chiPhi + " vnd")
+
+
+
+
+</script>
+</body>
+</html>
