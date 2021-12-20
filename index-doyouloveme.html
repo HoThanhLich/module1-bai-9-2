@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DO YOu Love Me</title>
+</head>
+<body>
+<h2 id="tit"> Do you love me?</h2><br>
+<input type="button" id="btyes" onclick="clickAnh()" value="YES"style="left: 40px; top: 100px ">
+<input type="button" id="btno" value="NO" onmouseover="nohope()" style="position: absolute; left: 60px; top: 85px ">
+<img  id="anh" style="width: 300px">
+<script>
+    function clickAnh() {
+        document.getElementById("anh").src="img/hinh-anh-trai-tim-6.jpg"
+        document.getElementById("btyes").setAttribute("style","display:none")
+        document.getElementById("btno").setAttribute("style","display:none")
+        document.getElementById("tit").setAttribute("style","display:none")
+
+    }
+    function nohope() {
+        let x = Math.round(Math.random() * window.innerWidth);
+        let y = Math.round(Math.random() * window.innerHeight);
+        document.getElementById("btno").style.left = x +'px';
+        document.getElementById("btno").style.top = y +'px';
+    }
+</script>
+</body>
+</html>
